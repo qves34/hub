@@ -48,6 +48,11 @@ const PROJECTS = {
       'Plakáty a metadata přímo z TMDB',
       'Vlastní banner na profilu',
     ],
+    updates: [
+      { date: '26. 8. 2026', text: 'Patička s odkazem na Gamelist a autora' },
+      { date: '22. 8. 2026', text: 'Nová záložka Doporučené — tituly podle vkusu' },
+      { date: '22. 8. 2026', text: 'Filtr podle typu (film/anime/seriál) u přátel' },
+    ],
     live: 'https://wwatchlist.vercel.app',
     github: 'https://github.com/qves34/watchlist',
   },
@@ -63,6 +68,11 @@ const PROJECTS = {
       'Sdílený účet s Watchlistem — stejní přátelé, stejný profil',
       'Doporučené hry na míru',
     ],
+    updates: [
+      { date: '27. 8. 2026', text: 'Opravený banner — nepřesahuje přes hlavičku' },
+      { date: '27. 8. 2026', text: 'Postranní banner teď sdílený s Watchlistem' },
+      { date: '26. 8. 2026', text: 'Doporučené hry podle žánru' },
+    ],
     live: 'https://ggamelist.vercel.app',
     github: 'https://github.com/qves34/gamelist',
   },
@@ -77,6 +87,11 @@ const PROJECTS = {
       'Mercenary mód — volný výběr mapy, zbraně a operátora',
       'Story mód se 4 misemi a dialogy mezi postavami',
       'Vše psané od nuly, žádné pluginy ani addony',
+    ],
+    updates: [
+      { date: '1. 9. 2026', text: 'Endless mód, žebříček skóre, hudba a zvuky' },
+      { date: '30. 8. 2026', text: 'Story mód — první mise a dialogy' },
+      { date: '29. 8. 2026', text: 'Nová mapa (sklep), výsledky mise, modely zbraní' },
     ],
     live: null,
     github: 'https://github.com/qves34/mercenary',
@@ -114,6 +129,18 @@ function openProject(id) {
     const li = document.createElement('li');
     li.textContent = text;
     features.appendChild(li);
+  });
+
+  const updates = modal.querySelector('[data-field="updates"]');
+  updates.innerHTML = '';
+  data.updates.forEach(({ date, text }) => {
+    const li = document.createElement('li');
+    const time = document.createElement('span');
+    time.className = 'update-date';
+    time.textContent = date;
+    li.appendChild(time);
+    li.append(text);
+    updates.appendChild(li);
   });
 
   const actions = modal.querySelector('[data-field="actions"]');

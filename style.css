@@ -496,6 +496,36 @@ body{
   background: var(--accent);
 }
 
+.modal-side-label-updates{
+  margin-top: 2.4rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.modal-updates{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.modal-updates li{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.7rem;
+  color: var(--fg-dim);
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.update-date{
+  flex-shrink: 0;
+  color: var(--fg-faint);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
 @media (max-width: 860px){
   .modal-content{
     grid-template-columns: 1fr;
