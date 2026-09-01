@@ -80,15 +80,26 @@
 <dialog id="project-modal" class="modal">
   <div class="modal-panel">
     <button type="button" class="modal-close" aria-label="Zavřít">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
-    <div class="modal-top">
-      <span class="tag" data-field="tag"></span>
-      <span class="stack" data-field="stack"></span>
+
+    <div class="modal-content">
+      <div class="modal-main">
+        <span class="modal-index" data-field="index"></span>
+        <div class="modal-top">
+          <span class="tag" data-field="tag"></span>
+          <span class="stack" data-field="stack"></span>
+        </div>
+        <h3 data-field="title"></h3>
+        <p data-field="desc"></p>
+        <div class="modal-actions" data-field="actions"></div>
+      </div>
+
+      <div class="modal-side">
+        <p class="modal-side-label">co umí</p>
+        <ul class="modal-features" data-field="features"></ul>
+      </div>
     </div>
-    <h3 data-field="title"></h3>
-    <p data-field="desc"></p>
-    <div class="modal-actions" data-field="actions"></div>
   </div>
 </dialog>
 

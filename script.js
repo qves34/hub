@@ -36,26 +36,48 @@ if (!prefersReducedMotion) {
 // project detail modal
 const PROJECTS = {
   watchlist: {
+    index: '01',
     tag: 'živě', tagClass: 'tag-live',
     stack: 'React · Supabase',
     title: 'Watchlist',
     desc: 'Sleduju v ní filmy, seriály a anime na jednom místě — hodnocení, rozepsané a dokoukané seznamy, přátelé a doporučení podle společného vkusu. Postavené na Reactu a Supabase, nasazené na Vercelu.',
+    features: [
+      'Filmy, seriály i anime v jednom seznamu',
+      'Hodnocení a poznámky u každé položky',
+      'Přátelé a doporučení podle společného vkusu',
+      'Plakáty a metadata přímo z TMDB',
+      'Vlastní banner na profilu',
+    ],
     live: 'https://wwatchlist.vercel.app',
     github: 'https://github.com/qves34/watchlist',
   },
   gamelist: {
+    index: '02',
     tag: 'živě', tagClass: 'tag-live',
     stack: 'React · RAWG',
     title: 'Gamelist',
     desc: 'Herní obdoba Watchlistu — rozehrané, dohrané a vysněné hry, metadata z RAWG.io, sdílené s přáteli přes stejný účet. Stejná architektura jako Watchlist, jen pro hry.',
+    features: [
+      'Rozehrané, dohrané i vysněné hry',
+      'Obálky a metadata z RAWG.io',
+      'Sdílený účet s Watchlistem — stejní přátelé, stejný profil',
+      'Doporučené hry na míru',
+    ],
     live: 'https://ggamelist.vercel.app',
     github: 'https://github.com/qves34/gamelist',
   },
   mercenary: {
+    index: '03',
     tag: 've vývoji', tagClass: 'tag-dev',
     stack: 'Godot 4 · GDScript',
     title: 'Mercenary',
     desc: 'Voxelová taktická střílečka s vlastním story módem — mise, dialogy i zbraně psané od nuly v GDScriptu, bez pluginů. Zatím jen zdrojový kód, žádný hratelný live build.',
+    features: [
+      'Voxelová grafika s vlastním pixelovým shadingem',
+      'Mercenary mód — volný výběr mapy, zbraně a operátora',
+      'Story mód se 4 misemi a dialogy mezi postavami',
+      'Vše psané od nuly, žádné pluginy ani addony',
+    ],
     live: null,
     github: 'https://github.com/qves34/mercenary',
   },
@@ -78,6 +100,7 @@ function openProject(id) {
   const data = PROJECTS[id];
   if (!data) return;
 
+  modal.querySelector('[data-field="index"]').textContent = data.index;
   const tagEl = modal.querySelector('[data-field="tag"]');
   tagEl.textContent = data.tag;
   tagEl.className = `tag ${data.tagClass}`;
@@ -85,11 +108,20 @@ function openProject(id) {
   modal.querySelector('[data-field="title"]').textContent = data.title;
   modal.querySelector('[data-field="desc"]').textContent = data.desc;
 
+  const features = modal.querySelector('[data-field="features"]');
+  features.innerHTML = '';
+  data.features.forEach((text) => {
+    const li = document.createElement('li');
+    li.textContent = text;
+    features.appendChild(li);
+  });
+
   const actions = modal.querySelector('[data-field="actions"]');
   actions.innerHTML = '';
   if (data.live) actions.appendChild(linkButton(data.live, 'Otevřít appku', true));
   actions.appendChild(linkButton(data.github, 'GitHub', !data.live));
 
+  modal.querySelector('.modal-panel').scrollTop = 0;
   modal.showModal();
 }
 
