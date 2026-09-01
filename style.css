@@ -227,6 +227,12 @@ body{
   box-shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
 }
 
+.card-static{ cursor: default; }
+.card-static:hover{
+  transform: none;
+  box-shadow: none;
+}
+
 .card-glow{
   position: absolute;
   inset: -1px;
