@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rozcestník</title>
+<meta name="description" content="Osobní rozcestník na projekty — Watchlist, Gamelist, Mercenary.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='%23d9b48f' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%23d9b48f'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="aurora" aria-hidden="true">
+  <span class="orb orb-a"></span>
+  <span class="orb orb-b"></span>
+  <span class="orb orb-c"></span>
+</div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow reveal">osobní rozcestník</p>
+    <h1 class="title">
+      <span class="reveal">Věci, které</span>
+      <span class="reveal em">stavím po večerech.</span>
+    </h1>
+    <p class="lede reveal">Appky a hry, co dělám pro radost — malá dílna vedle po&shy;čítače, ne řádek v CV.</p>
+  </div>
+  <a class="scroll-cue reveal" href="#projekty" aria-label="Scrollovat k projektům">
+    <span></span>
+  </a>
+</header>
+
+<main id="projekty" class="projects">
+  <div class="projects-inner">
+
+    <a class="card reveal" href="https://wwatchlist.vercel.app" target="_blank" rel="noopener noreferrer">
+      <div class="card-glow" aria-hidden="true"></div>
+      <div class="card-top">
+        <span class="tag tag-live">živě</span>
+        <span class="stack">React · Supabase</span>
+      </div>
+      <h2>Watchlist</h2>
+      <p>Filmy, seriály a anime na jednom místě — hodnocení, přátelé a doporučení podle vkusu.</p>
+      <span class="card-link">wwatchlist.vercel.app <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+
+    <a class="card reveal" href="https://ggamelist.vercel.app" target="_blank" rel="noopener noreferrer">
+      <div class="card-glow" aria-hidden="true"></div>
+      <div class="card-top">
+        <span class="tag tag-live">živě</span>
+        <span class="stack">React · RAWG</span>
+      </div>
+      <h2>Gamelist</h2>
+      <p>Herní obdoba Watchlistu — rozehrané, dohrané a vysněné hry, sdílené s přáteli.</p>
+      <span class="card-link">ggamelist.vercel.app <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+
+    <a class="card reveal" href="https://github.com/qves34/mercenary" target="_blank" rel="noopener noreferrer">
+      <div class="card-glow" aria-hidden="true"></div>
+      <div class="card-top">
+        <span class="tag tag-dev">ve vývoji</span>
+        <span class="stack">Godot 4 · GDScript</span>
+      </div>
+      <h2>Mercenary</h2>
+      <p>Voxelová taktická střílečka s vlastním story módem — psáno od nuly, bez pluginů.</p>
+      <span class="card-link">zdrojový kód na GitHubu <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <span>© 2026</span>
+  <a href="https://github.com/qves34" target="_blank" rel="noopener noreferrer">GitHub</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
